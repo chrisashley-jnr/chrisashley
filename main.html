@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christian Ashley — Product Designer</title>
+    <style>
+        :root {
+            --color-background: #fafaf8;
+            --color-text: #1a1a1a;
+            --color-text-light: #666;
+            --color-accent: #d4a574;
+            --color-border: #e5e5e5;
+            --font-serif: 'Georgia', 'Garamond', serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+            --spacing-2xl: 64px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            background: var(--color-background);
+            color: var(--color-text);
+            font-family: var(--font-sans);
+        }
+
+        body {
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 248, 0.98);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid var(--color-border);
+            padding: var(--spacing-md) 0;
+            z-index: 1000;
+        }
+
+        nav .nav-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-md);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: var(--color-text);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--spacing-xl);
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-text-light);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-text);
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 120px var(--spacing-md) var(--spacing-xl);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .hero h1 {
+            font-family: var(--font-serif);
+            font-size: 48px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -0.5px;
+        }
+
+        .hero-intro {
+            font-size: 18px;
+            line-height: 1.9;
+            color: var(--color-text);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .hero-intro strong {
+            font-weight: 600;
+        }
+
+        .hero-intro p {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        /* Section */
+        section {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 400;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: -0.5px;
+        }
+
+        /* Experience Item */
+        .experience-item {
+            margin-bottom: var(--spacing-xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .experience-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--spacing-md);
+            gap: var(--spacing-md);
+        }
+
+        .experience-title {
+            font-family: var(--font-serif);
+            font-size: 20px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .experience-company {
+            font-size: 14px;
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-top: var(--spacing-xs);
+        }
+
+        .experience-duration {
+            font-size: 14px;
+            color: var(--color-text-light);
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.8;
+        }
+
+        .experience-list {
+            list-style: none;
+            color: var(--color-text-light);
+        }
+
+        .experience-list li {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-md);
+            position: relative;
+            font-size: 15px;
+        }
+
+        .experience-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        /* Skills Section */
+        .skills-section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-lg);
+        }
+
+        .skill-group h3 {
+            font-family: var(--font-serif);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text);
+        }
+
+        .skill-group ul {
+            list-style: none;
+            color: var(--color-text-light);
+            font-size: 15px;
+            line-height: 1.9;
+        }
+
+        .skill-group li {
+            margin-bottom: var(--spacing-xs);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: #f5f3f0;
+            padding: var(--spacing-xl);
+            text-align: center;
+            margin: var(--spacing-2xl) 0;
+            border: 1px solid var(--color-border);
+        }
+
+        .cta-section h2 {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .cta-section p {
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-lg);
+            font-size: 16px;
+        }
+
+        .cta-links {
+            display: flex;
+            gap: var(--spacing-md);
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .cta-links a:hover {
+            color: var(--color-text);
+        }
+
+        .cta-links span {
+            color: var(--color-text-light);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--color-border);
+            padding: var(--spacing-xl) var(--spacing-md);
+            text-align: center;
+            color: var(--color-text-light);
+            font-size: 14px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+
+            .experience-header {
+                flex-direction: column;
+            }
+
+            .experience-duration {
+                white-space: normal;
+            }
+
+            .skills-section {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                gap: var(--spacing-md);
+            }
+
+            .nav-links a {
+                font-size: 13px;
+            }
+
+            .container {
+                padding-top: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="nav-logo">Christian Ashley</a>
+            <ul class="nav-links">
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="./projects.html">Open Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Product Designer!</h1>
+            <div class="hero-intro">
+                <p><strong>I've spent the last 5+ years designing payment platforms and financial apps that simplify complex processes.</strong> I started as a graphic designer at smaller agencies, evolved into product design, and now I lead cross-functional teams in building user-centric solutions that drive real business impact.</p>
+                <p><strong>I didn't take a conventional path.</strong> I trained myself through internships, built design systems from scratch, mentored junior designers, and collaborated with distributed teams across multiple time zones. My work has generated 2M+ GHS in transactions and improved user task completion by 45% through iterative design and user research.</p>
+                <p><strong>My goal is to solve problems that matter.</strong> Whether it's streamlining payment workflows, reducing transaction friction by 30%, or expanding payment accessibility through NFC integration, I approach every challenge with user empathy, data-driven decisions, and thoughtful design.</p>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Senior Product Designer</h3>
+                        <span class="experience-company">Payswitch Company Ltd</span>
+                    </div>
+                    <div class="experience-duration">May 2022 – June 2023</div>
+                </div>
+                <p class="experience-description">Led end-to-end design of Payment Pages web app, enabling users to generate payment links and QR codes with customizable forms.</p>
+                <ul class="experience-list">
+                    <li>Improved user task completion by 45% through iterative usability testing</li>
+                    <li>Delivered 2M+ GHS in total transactions and 100,000+ GHS profit contribution within 6 months</li>
+                    <li>Conducted competitive analysis across 8+ competitors to identify market gaps</li>
+                    <li>Mentored junior designers on design systems and Figma workflows</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Product Manager Assistant</h3>
+                        <span class="experience-company">Cleva</span>
+                    </div>
+                    <div class="experience-duration">July 2023 – Present</div>
+                </div>
+                <p class="experience-description">Leading user-centric feature development for a financial app serving 10K+ users across distributed teams.</p>
+                <ul class="experience-list">
+                    <li>Drove integration of NFC technology and dynamic payment links</li>
+                    <li>Reduced transaction friction by 30% through workflow optimization</li>
+                    <li>Conducted 15+ user interviews and usability testing sessions</li>
+                    <li>Managed Jira workflows and cross-functional communication across 3 time zones</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Product Designer</h3>
+                        <span class="experience-company">Tiqniat</span>
+                    </div>
+                    <div class="experience-duration">Oct 2021 – Apr 2022</div>
+                </div>
+                <p class="experience-description">Designed wireframes, prototypes, and high-fidelity mockups for fintech and e-commerce applications.</p>
+                <ul class="experience-list">
+                    <li>Conducted user research and usability testing with 20+ participants</li>
+                    <li>Delivered design specifications and component libraries</li>
+                    <li>Collaborated with developers and project managers on agile teams</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-header">
+                    <div>
+                        <h3 class="experience-title">Web &amp; Graphic Designer</h3>
+                        <span class="experience-company">Spesuna Limited</span>
+                    </div>
+                    <div class="experience-duration">Apr 2019 – Oct 2020</div>
+                </div>
+                <p class="experience-description">Designed responsive web interfaces and custom graphics for 15+ client projects across e-commerce, SaaS, and corporate sectors.</p>
+                <ul class="experience-list">
+                    <li>Developed 8+ websites using HTML5, CSS3, and JavaScript</li>
+                    <li>Achieved 35% improvement in average page load times</li>
+                    <li>Translated business requirements into intuitive user experiences</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills &amp; Expertise</h2>
+            <div class="skills-section">
+                <div class="skill-group">
+                    <h3>Design &amp; UX</h3>
+                    <ul>
+                        <li>UX &amp; UI Design</li>
+                        <li>Product Design</li>
+                        <li>Wireframing &amp; Prototyping</li>
+                        <li>User Research</li>
+                        <li>Usability Testing</li>
+                        <li>Design Systems</li>
+                        <li>Responsive Design</li>
+                        <li>Accessibility (WCAG)</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Design Tools</h3>
+                    <ul>
+                        <li>Figma (Expert)</li>
+                        <li>Adobe Creative Suite</li>
+                        <li>Sketch &amp; Adobe XD</li>
+                        <li>ProtoPie &amp; Framer</li>
+                        <li>Miro &amp; Notion</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Product &amp; Development</h3>
+                    <ul>
+                        <li>Product Strategy</li>
+                        <li>Market Research</li>
+                        <li>HTML5 &amp; CSS3</li>
+                        <li>JavaScript (ES6+)</li>
+                        <li>React (Basic)</li>
+                        <li>Agile Methodologies</li>
+                        <li>Jira &amp; Asana</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h3>Analytics &amp; Tools</h3>
+                    <ul>
+                        <li>Google Analytics</li>
+                        <li>Hotjar &amp; UserTesting</li>
+                        <li>A/B Testing</li>
+                        <li>Data-driven Decisions</li>
+                        <li>Slack &amp; Teams</li>
+                        <li>Excel &amp; Google Sheets</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="contact">
+            <h2>Let&rsquo;s Work Together</h2>
+            <p>I&rsquo;m currently available for remote Product Designer and Product Manager roles, as well as design consulting and mentorship opportunities.</p>
+            <div class="cta-links">
+                <a href="mailto:chrisashley1061@gmail.com">Email</a>
+                <span>•</span>
+                <a href="https://www.behance.net/chrisashley1" target="_blank" rel="noopener">Behance Portfolio</a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/chrisashleyjnr" target="_blank" rel="noopener">LinkedIn</a>
+                <span>•</span>
+                <a href="https://medium.com/@chrisashley1061" target="_blank" rel="noopener">Medium</a>
+                <span>•</span>
+                <a href="tel:+233554034884">+233 55 403 4884</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Christian Ashley. Crafted with care. Based in Ghana, working remote.</p>
+    </footer>
+</body>
+</html>

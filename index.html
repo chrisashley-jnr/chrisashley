@@ -287,6 +287,39 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+
+            /* Navigation */
+            nav {
+                padding: 16px 0;
+            }
+
+            nav .nav-wrapper {
+                padding: 0 16px;
+            }
+
+            .nav-logo {
+                font-size: 16px;
+            }
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .nav-links li:last-child a {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+            }
+
+            /* Content */
+            .container {
+                padding-top: 90px;
+            }
+
             .hero h1 {
                 font-size: 36px;
             }
@@ -305,18 +338,6 @@
 
             .skills-section {
                 grid-template-columns: 1fr;
-            }
-
-            .nav-links {
-                gap: var(--spacing-md);
-            }
-
-            .nav-links a {
-                font-size: 13px;
-            }
-
-            .container {
-                padding-top: 100px;
             }
         }
     </style>

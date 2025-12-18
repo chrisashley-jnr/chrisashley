@@ -374,16 +374,31 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+
+      /* Navigation */
+      nav {
+        padding: 16px 0;
+      }
+
+      nav .nav-wrapper {
+        padding: 0 16px;
+      }
+
+      .nav-logo {
+        font-size: 16px;
+      }
+
       .nav-links {
-        gap: 24px;
+        gap: 12px;
       }
 
       .nav-links a {
-        font-size: 13px;
+        font-size: 12px;
       }
 
+      /* Content */
       .container {
-        padding-top: 100px;
+        padding-top: 90px;
       }
 
       .page-header h1 {
@@ -407,10 +422,12 @@
 
       .modal-content {
         max-width: 100%;
-        max-height: 90vh;
+        height: 95vh;
         border-radius: 20px 20px 0 0;
         animation: slideUpFromBottom 0.3s ease;
-        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
       }
 
       @keyframes slideUpFromBottom {
@@ -425,10 +442,14 @@
 
       .modal-header {
         height: 200px;
+        flex-shrink: 0;
       }
 
       .modal-body {
         padding: 24px;
+        overflow-y: auto;
+        flex: 1;
+        -webkit-overflow-scrolling: touch;
       }
 
       .modal-body h2 {
@@ -592,12 +613,12 @@
           label: "View Case Study",
           url: "https://yourportfolio.com/kingsway-delivery-app"
         },
-        image: "images/kingsway-delivery-app.jpg"
+        image: "/asserts/images/kingsway.png"
       }
       ,
       {
         id: 6,
-        title: "Fintech Dashboard",
+        title: "Payswitch (TheTeller) Dashboard",
         category: "web",
         tag: "Web",
         shortDescription: "Comprehensive analytics dashboard for financial data visualization with real-time updates and custom reporting.",
@@ -609,7 +630,7 @@
           "Export functionality (PDF, CSV, Excel)",
           "Role-based access controls"
         ],
-        image: "images/fintech-dashboard.jpg"
+        image: "/asserts/images/theteller.png"
       },
 
     ];

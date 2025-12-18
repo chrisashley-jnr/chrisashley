@@ -395,12 +395,52 @@
         gap: 24px;
       }
 
+      /* Bottom Sheet Modal */
+      .modal {
+        padding: 0;
+        align-items: flex-end;
+      }
+
+      .modal.active {
+        align-items: flex-end;
+      }
+
+      .modal-content {
+        max-width: 100%;
+        max-height: 90vh;
+        border-radius: 20px 20px 0 0;
+        animation: slideUpFromBottom 0.3s ease;
+        overflow-y: auto;
+      }
+
+      @keyframes slideUpFromBottom {
+        from {
+          transform: translateY(100%);
+        }
+
+        to {
+          transform: translateY(0);
+        }
+      }
+
+      .modal-header {
+        height: 200px;
+      }
+
       .modal-body {
         padding: 24px;
       }
 
       .modal-body h2 {
         font-size: 24px;
+      }
+
+      .close-modal {
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
       }
     }
   </style>
@@ -455,6 +495,9 @@
           <h3>Key Features</h3>
           <ul id="modalFeatures"></ul>
         </div>
+        <a id="modalCta" href="#" target="_blank" class="modal-cta-btn" style="height: 15rem;">
+          View More
+        </a>
       </div>
     </div>
   </div>
@@ -476,6 +519,12 @@
           "QR code generation for contactless payments",
           "Analytics dashboard with conversion metrics"
         ],
+        cta: [
+          {
+            label: "View Case Study",
+            url: "https://www.kingsway-delivery-app.com"
+          }
+        ],
         image: "/asserts/images/paymentPages.png"
       },
       {
@@ -492,23 +541,21 @@
           "Biometric authentication for enhanced security",
           "In-app transaction history and reporting"
         ],
-        image: "images/cleva-app.jpg"
+        image: "/asserts/images/cleva.png"
       },
       {
         id: 3,
         title: "Chickeninn Brand Campaign",
         category: "graphic",
         tag: "Graphic Design",
-        shortDescription: "Premium brand visual design campaign for Simbisa Africa's Chickeninn franchise across digital and print media.",
+        shortDescription: "Premium social media design campaign for Simbisa Africa's Chickeninn franchise through iSel Media.",
         fullDescription: "Created a comprehensive visual campaign for Chickeninn, maintaining brand consistency while infusing creative direction to elevate brand perception. Delivered 50+ assets including social media graphics, menu boards, promotional materials, and in-store displays using Adobe Creative Suite.",
         features: [
           "Social media content strategy and design",
-          "Print materials (menus, posters, banners)",
           "In-store visual merchandising designs",
-          "Digital advertising campaigns",
-          "Brand guidelines documentation"
+          "Digital advertising campaigns"
         ],
-        image: "images/chickeninn.jpg"
+        image: "/asserts/images/chickeninn.png"
       },
       {
         id: 4,
@@ -524,42 +571,32 @@
           "Product recommendations engine",
           "Accessibility compliance (WCAG 2.1 AA)"
         ],
-        image: "images/ecommerce-ui.jpg"
+        image: "/asserts/images/E-commerce.png"
       },
+
       {
         id: 5,
-        title: "Guinness Ghana Rebrand",
-        category: "branding",
-        tag: "Branding",
-        shortDescription: "Complete brand identity refresh for Guinness Ghana including logo evolution, color palette, and brand guidelines.",
-        fullDescription: "Led the brand refresh project for Guinness Ghana, modernizing their visual identity while respecting brand heritage. Developed comprehensive brand guidelines covering logo usage, typography, color systems, and application across various touchpoints.",
+        title: "Kingsway Delivery App",
+        category: "delivery",
+        tag: "Mobile Application",
+        shortDescription: "On-demand delivery app experience for ordering, tracking, and managing deliveries in real time.",
+        fullDescription: "Designed a user-friendly delivery app for Kingsway, enabling customers to browse stores, place orders, and track deliveries in real time. Focused on clear navigation, fast checkout, and reliable order tracking to improve convenience and customer satisfaction.",
         features: [
-          "Logo evolution and refinement",
-          "Color palette expansion with accessibility focus",
-          "Typography system with web/print specifications",
-          "Comprehensive brand guidelines (60+ pages)",
-          "Application mockups for packaging and marketing"
+          "Intuitive home screen with featured stores and quick actions",
+          "Real-time GPS order tracking with status updates",
+          "Streamlined checkout with multiple payment options",
+          "Order history and re-order for frequent purchases",
+          "Optimized UI for fast browsing and low-friction ordering"
         ],
-        image: "images/guinness-rebrand.jpg"
-      },
+        cta: {
+          label: "View Case Study",
+          url: "https://yourportfolio.com/kingsway-delivery-app"
+        },
+        image: "images/kingsway-delivery-app.jpg"
+      }
+      ,
       {
         id: 6,
-        title: "SaaS Newsletter System",
-        category: "email",
-        tag: "Email Templates",
-        shortDescription: "Responsive email template system for SaaS product updates, onboarding sequences, and customer engagement.",
-        fullDescription: "Designed a modular email template system for a SaaS product, ensuring consistent branding across all customer touchpoints. Templates are fully responsive, accessible, and optimized for major email clients including Gmail, Outlook, and Apple Mail.",
-        features: [
-          "12 unique template designs (onboarding, updates, promotions)",
-          "Responsive design tested across 15+ email clients",
-          "Modular components for easy customization",
-          "Dark mode support for better accessibility",
-          "A/B testing variations for optimization"
-        ],
-        image: "images/saas-newsletters.jpg"
-      },
-      {
-        id: 7,
         title: "Fintech Dashboard",
         category: "web",
         tag: "Web",
@@ -574,22 +611,7 @@
         ],
         image: "images/fintech-dashboard.jpg"
       },
-      {
-        id: 8,
-        title: "Fitness Tracking App",
-        category: "mobile",
-        tag: "Mobile",
-        shortDescription: "iOS and Android fitness tracking application with personalized workout plans and progress monitoring.",
-        fullDescription: "Created the complete UX/UI for a fitness tracking mobile app, featuring personalized workout recommendations, progress tracking, and social features. Conducted usability testing with 20+ participants to refine the onboarding flow and workout logging experience.",
-        features: [
-          "Personalized workout plan generation",
-          "Video demonstrations for 200+ exercises",
-          "Progress tracking with visual analytics",
-          "Social features for accountability",
-          "Nutrition tracking and meal planning"
-        ],
-        image: "images/fitness-app.jpg"
-      }
+
     ];
 
     // Render projects

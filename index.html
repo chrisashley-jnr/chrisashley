@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian Ashley — Product Designer</title>
+    <title>Christian Ashley</title>
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css">
     <style>
         :root {
-            --color-background: #fafaf8;
-            --color-text: #1a1a1a;
-            --color-text-light: #666;
-            --color-accent: #d4a574;
-            --color-border: #e5e5e5;
+            --color-background: #ffffff;
+            --color-text: #000000;
+            --color-text-light: #333333;
+            --color-accent: #333333;
+            --color-border: #000000;
             --font-serif: 'Georgia', 'Garamond', serif;
             --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             --spacing-xs: 8px;
@@ -27,7 +29,8 @@
             box-sizing: border-box;
         }
 
-        html, body {
+        html,
+        body {
             background: var(--color-background);
             color: var(--color-text);
             font-family: var(--font-sans);
@@ -44,7 +47,7 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(250, 250, 248, 0.98);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(8px);
             border-bottom: 1px solid var(--color-border);
             padding: var(--spacing-md) 0;
@@ -96,6 +99,7 @@
         /* Hero Section */
         .hero {
             margin-bottom: var(--spacing-2xl);
+            gap: 4rem;
         }
 
         .hero h1 {
@@ -125,6 +129,7 @@
         /* Section */
         section {
             margin-bottom: var(--spacing-2xl);
+            gap: 5rem;
         }
 
         h2 {
@@ -230,7 +235,7 @@
 
         /* CTA Section */
         .cta-section {
-            background: #f5f3f0;
+            background: #000000;
             padding: var(--spacing-xl);
             text-align: center;
             margin: var(--spacing-2xl) 0;
@@ -239,10 +244,11 @@
 
         .cta-section h2 {
             margin-bottom: var(--spacing-md);
+            color: #ffffff;
         }
 
         .cta-section p {
-            color: var(--color-text-light);
+            color: #ffffff;
             margin-bottom: var(--spacing-lg);
             font-size: 16px;
         }
@@ -255,7 +261,7 @@
         }
 
         .cta-links a {
-            color: var(--color-accent);
+            color: #ffffff;
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
@@ -263,11 +269,11 @@
         }
 
         .cta-links a:hover {
-            color: var(--color-text);
+            color: #cccccc;
         }
 
         .cta-links span {
-            color: var(--color-text-light);
+            color: #ffffff;
         }
 
         /* Footer */
@@ -314,7 +320,41 @@
             }
         }
     </style>
+    <style>
+        #typed {
+            font-size: 2.5rem;
+            white-space: nowrap;
+            border-right: 2px solid #000;
+            padding-right: 4px;
+            animation: caret 0.8s steps(1) infinite;
+        }
+
+        @keyframes caret {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        .imghero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 20px;
+            height: auto;
+            margin-bottom: 3rem;
+            padding-top: 3rem;
+        }
+
+        .project-image {
+            height: auto;
+        }
+
+        img {
+            height: 200px;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav>
@@ -324,7 +364,8 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="/src/projects.html">Open Projects</a></li>
+                <li><a href="/src/projects.html" style="display: flex; align-items: center; gap: 5px;"><u>View my
+                            Projects</u><i class="hgi hgi-stroke hgi-arrow-right-02"></i></a></li>
             </ul>
         </div>
     </nav>
@@ -332,14 +373,25 @@
     <!-- Main Content -->
     <div class="container">
         <!-- Hero Section -->
-         
         <section class="hero">
-            <div class="project-image" style="width: 50px;"><img src="/asserts/images/hero.png" alt="chris"></div>
-            <h1>Product Designer!</h1>
+            <div class="imghero">
+                <div class="project-image"><img src="/asserts/images/hero.png" alt="chris"></div>
+                <h1 id="typed"></h1>
+            </div>
+
             <div class="hero-intro">
-                <p><strong>I've spent the last 5+ years designing payment platforms and financial apps that simplify complex processes.</strong> I started as a graphic designer at smaller agencies, evolved into product design, and now I lead cross-functional teams in building user-centric solutions that drive real business impact.</p>
-                <p><strong>I didn't take a conventional path.</strong> I trained myself through internships, built design systems from scratch, mentored junior designers, and collaborated with distributed teams across multiple time zones. My work has generated 5M+ USD in transactions and improved user task completion by 45% through iterative design and user research.</p>
-                <p><strong>My goal is to solve problems that matter.</strong> Whether it's streamlining payment workflows, reducing transaction friction by 30%, or expanding payment accessibility through NFC integration, I approach every challenge with user empathy, data-driven decisions, and thoughtful design.</p>
+                <p><strong>I've spent the last 5+ years designing payment platforms and financial apps that simplify
+                        complex processes.</strong> I started as a graphic designer at smaller agencies, evolved into
+                    product design, and now I lead cross-functional teams in building user-centric solutions that drive
+                    real business impact.</p>
+                <p><strong>I didn't take a conventional path.</strong> I trained myself through internships, built
+                    design systems from scratch, mentored junior designers, and collaborated with distributed teams
+                    across multiple time zones. My work has generated 5M+ USD in transactions and improved user task
+                    completion by 45% through iterative design and user research.</p>
+                <p><strong>My goal is to solve problems that matter.</strong> Whether it's streamlining payment
+                    workflows, reducing transaction friction by 30%, or expanding payment accessibility through NFC
+                    integration, I approach every challenge with user empathy, data-driven decisions, and thoughtful
+                    design.</p>
             </div>
         </section>
 
@@ -355,10 +407,12 @@
                     </div>
                     <div class="experience-duration">May 2022 – June 2023</div>
                 </div>
-                <p class="experience-description">Led end-to-end design of Payment Pages web app, enabling users to generate payment links and QR codes with customizable forms.</p>
+                <p class="experience-description">Led end-to-end design of Payment Pages web app, enabling users to
+                    generate payment links and QR codes with customizable forms.</p>
                 <ul class="experience-list">
                     <li>Improved user task completion by 45% through iterative usability testing</li>
-                    <li>Delivered 2M+ GHS in total transactions and 100,000+ GHS profit contribution within 6 months</li>
+                    <li>Delivered 2M+ GHS in total transactions and 100,000+ GHS profit contribution within 6 months
+                    </li>
                     <li>Conducted competitive analysis across 8+ competitors to identify market gaps</li>
                     <li>Mentored junior designers on design systems and Figma workflows</li>
                 </ul>
@@ -372,7 +426,8 @@
                     </div>
                     <div class="experience-duration">July 2023 – Present</div>
                 </div>
-                <p class="experience-description">Leading user-centric feature development for a financial app serving 10K+ users across distributed teams.</p>
+                <p class="experience-description">Leading user-centric feature development for a financial app serving
+                    10K+ users across distributed teams.</p>
                 <ul class="experience-list">
                     <li>Drove integration of NFC technology and dynamic payment links</li>
                     <li>Reduced transaction friction by 30% through workflow optimization</li>
@@ -389,7 +444,8 @@
                     </div>
                     <div class="experience-duration">Oct 2021 – Apr 2022</div>
                 </div>
-                <p class="experience-description">Designed wireframes, prototypes, and high-fidelity mockups for fintech and e-commerce applications.</p>
+                <p class="experience-description">Designed wireframes, prototypes, and high-fidelity mockups for fintech
+                    and e-commerce applications.</p>
                 <ul class="experience-list">
                     <li>Conducted user research and usability testing with 20+ participants</li>
                     <li>Delivered design specifications and component libraries</li>
@@ -405,7 +461,8 @@
                     </div>
                     <div class="experience-duration">Apr 2019 – Oct 2020</div>
                 </div>
-                <p class="experience-description">Designed responsive web interfaces and custom graphics for 15+ client projects across e-commerce, SaaS, and corporate sectors.</p>
+                <p class="experience-description">Designed responsive web interfaces and custom graphics for 15+ client
+                    projects across e-commerce, SaaS, and corporate sectors.</p>
                 <ul class="experience-list">
                     <li>Developed 8+ websites using HTML5, CSS3, and JavaScript</li>
                     <li>Achieved 35% improvement in average page load times</li>
@@ -473,7 +530,8 @@
         <!-- CTA Section -->
         <section class="cta-section" id="contact">
             <h2>Let&rsquo;s Work Together</h2>
-            <p>I&rsquo;m currently available for remote Product Designer and Product Manager roles, as well as design consulting and mentorship opportunities.</p>
+            <p>I&rsquo;m currently available for remote Product Designer and Product Manager roles, as well as design
+                consulting and mentorship opportunities.</p>
             <div class="cta-links">
                 <a href="mailto:chrisashley1061@gmail.com">Email</a>
                 <span>•</span>
@@ -492,5 +550,42 @@
     <footer>
         <p>&copy; 2025 Christian Ashley. Crafted with care. Based in Ghana, working remote.</p>
     </footer>
+    <script>
+        const words = ["Hi! I'm Christian Ashley", "I am a Product Designer"];
+        const el = document.getElementById("typed");
+        const typingSpeed = 120;    // ms per character
+        const pauseBetween = 1000;  // pause after each full word
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        function type() {
+            const current = words[wordIndex];
+
+            if (!deleting) {
+                // typing
+                el.textContent = current.slice(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === current.length) {
+                    deleting = true;
+                    setTimeout(type, pauseBetween);
+                    return;
+                }
+            } else {
+                // deleting
+                el.textContent = current.slice(0, charIndex - 1);
+                charIndex--;
+                if (charIndex === 0) {
+                    deleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                }
+            }
+
+            setTimeout(type, typingSpeed);
+        }
+
+        type();
+    </script>
 </body>
+
 </html>

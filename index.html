@@ -89,6 +89,34 @@
             color: var(--color-text);
         }
 
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(7px, 7px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
         /* Main Container */
         .container {
             max-width: 800px;
@@ -301,18 +329,36 @@
                 font-size: 16px;
             }
 
+            .hamburger {
+                display: flex;
+            }
+
             .nav-links {
-                gap: 12px;
+                position: fixed;
+                top: 60px;
+                right: -100%;
+                width: 100%;
+                background: var(--color-background);
+                flex-direction: column;
+                padding: 24px;
+                gap: 24px;
+                border-bottom: 1px solid var(--color-border);
+                transition: right 0.3s ease;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                right: 0;
             }
 
             .nav-links a {
-                font-size: 12px;
+                font-size: 16px;
             }
 
             .nav-links li:last-child a {
                 display: flex;
                 align-items: center;
-                gap: 3px;
+                gap: 5px;
             }
 
             /* Content */
@@ -373,6 +419,24 @@
         img {
             height: 200px;
         }
+
+        @media (max-width: 768px) {
+            .imghero {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 24px;
+                padding-top: 1rem;
+            }
+
+            .imghero img {
+                height: 150px;
+            }
+
+            #typed {
+                font-size: 1.8rem !important;
+
+            }
+        }
     </style>
 </head>
 
@@ -381,10 +445,15 @@
     <nav>
         <div class="nav-wrapper">
             <a href="#" class="nav-logo">Christian Ashley</a>
-            <ul class="nav-links">
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+                <li><a href="#skills" onclick="closeMenu()">Skills</a></li>
+                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
                 <li><a href="/src/projects.html" style="display: flex; align-items: center; gap: 5px;"><u>View my
                             Projects</u><i class="hgi hgi-stroke hgi-arrow-right-02"></i></a></li>
             </ul>
@@ -606,6 +675,21 @@
         }
 
         type();
+
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const hamburger = document.querySelector('.hamburger');
+            navLinks.classList.remove('active');
+            hamburger.classList.remove('active');
+        }
     </script>
 </body>
 

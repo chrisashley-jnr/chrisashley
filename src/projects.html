@@ -78,6 +78,34 @@
       color: var(--color-text);
     }
 
+    /* Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--color-text);
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+
     /* Container */
     .container {
       max-width: 1200px;
@@ -388,12 +416,30 @@
         font-size: 16px;
       }
 
+      .hamburger {
+        display: flex;
+      }
+
       .nav-links {
-        gap: 12px;
+        position: fixed;
+        top: 60px;
+        right: -100%;
+        width: 100%;
+        background: var(--color-background);
+        flex-direction: column;
+        padding: 24px;
+        gap: 24px;
+        border-bottom: 1px solid var(--color-border);
+        transition: right 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-links.active {
+        right: 0;
       }
 
       .nav-links a {
-        font-size: 12px;
+        font-size: 16px;
       }
 
       /* Content */
@@ -472,9 +518,14 @@
   <nav>
     <div class="nav-wrapper">
       <a href="index.html" class="nav-logo">Christian Ashley</a>
-      <ul class="nav-links">
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="projects.html">Projects</a></li>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/index.html" onclick="closeMenu()">Home</a></li>
+        <li><a href="projects.html" onclick="closeMenu()">Projects</a></li>
       </ul>
     </div>
   </nav>
@@ -711,6 +762,21 @@
 
     // Initial render
     renderProjects();
+
+    // Hamburger Menu Toggle
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      navLinks.classList.toggle('active');
+      hamburger.classList.toggle('active');
+    }
+
+    function closeMenu() {
+      const navLinks = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      navLinks.classList.remove('active');
+      hamburger.classList.remove('active');
+    }
   </script>
 </body>
 

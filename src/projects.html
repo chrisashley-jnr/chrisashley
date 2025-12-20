@@ -409,6 +409,28 @@
       font-weight: bold;
     }
 
+    .modal-cta-btn {
+      display: inline-block;
+      background: var(--color-accent);
+      color: white;
+      text-decoration: none;
+      padding: 14px 32px;
+      font-size: 14px;
+      font-weight: 600;
+      margin-top: 24px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .modal-cta-btn:hover {
+      background: var(--color-accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .modal-cta-btn.hidden {
+      display: none;
+    }
+
     /* Responsive */
     @media (max-width: 768px) {
 
@@ -577,7 +599,7 @@
           <h3>Key Features</h3>
           <ul id="modalFeatures"></ul>
         </div>
-        <a id="modalCta" href="cta.url" target="cta" class="modal-cta-btn" style="height: 15rem;">
+        <a id="modalCta" href="#" target="_blank" class="modal-cta-btn hidden">
           View More
         </a>
       </div>
@@ -750,6 +772,16 @@
       modalHeader.innerHTML = project.image
         ? `<img src="${project.image}" alt="${project.title}">`
         : `<span>Project Image</span>`;
+
+      // Handle CTA button
+      const ctaBtn = document.getElementById('modalCta');
+      if (project.cta && project.cta.url) {
+        ctaBtn.href = project.cta.url;
+        ctaBtn.textContent = project.cta.label || 'View More';
+        ctaBtn.classList.remove('hidden');
+      } else {
+        ctaBtn.classList.add('hidden');
+      }
 
       document.getElementById('projectModal').classList.add('active');
       document.body.style.overflow = 'hidden';

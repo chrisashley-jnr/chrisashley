@@ -166,8 +166,6 @@
             gap: 5rem;
         }
 
-        }
-
         h2 {
             font-family: var(--font-serif);
             font-size: 32px;
@@ -592,33 +590,88 @@
             100% { background-position: 0% 50%; }
         }
 
-        .brand-logo {
+        .logo-container {
             position: fixed;
-            top: 24px;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            padding: 8px 32px;
+            box-shadow: none;
+            z-index: 2000;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-container:hover {
+            background: rgba(40, 40, 40, 0.5);
+            box-shadow: none;
+        }
+
+        .brand-logo {
             font-family: 'Allison', cursive;
             font-size: 56px;
             font-weight: 400;
-            text-decoration: none;
             background: linear-gradient(270deg, #a855f7, #6ee7b7, #3b82f6);
             background-size: 600% 600%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: gradientAnimation 8s ease infinite;
-            z-index: 2000;
-            transition: opacity 0.3s ease;
             white-space: nowrap;
-        }
-
-        .brand-logo:hover {
-            opacity: 0.8;
+            line-height: normal;
+            padding-bottom: 2px;
         }
         
+        @media (max-width: 1024px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                gap: 40px;
+                padding-top: 140px;
+            }
+            .left-pane {
+                position: static;
+            }
+            .right-pane {
+                margin-top: 0;
+            }
+            body {
+                padding-bottom: 80px;
+            }
+        }
+
         @media (max-width: 768px) {
+            .logo-container {
+                padding: 4px 16px;
+            }
             .brand-logo {
-                top: 20px;
                 font-size: 44px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .hero-intro {
+                font-size: 16px;
+            }
+            .floating-nav {
+                width: 90%;
+                justify-content: space-between;
+                bottom: 16px;
+            }
+            .nav-item span {
+                display: none;
+            }
+            .nav-item.schedule-btn span {
+                display: inline;
+                font-size: 13px;
+            }
+            .nav-item.schedule-btn {
+                padding: 8px 14px;
             }
         }
     </style>
@@ -631,7 +684,9 @@
 
 <body>
     <!-- Brand Logo -->
-    <a href="#" class="brand-logo">Christian Ashley</a>
+    <a href="#" class="logo-container">
+        <span class="brand-logo">Christian Ashley</span>
+    </a>
 
     <!-- Navigation -->
     <nav class="floating-nav">
@@ -769,22 +824,22 @@
                 <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 24px;">Skills &amp; Tools</h2>
                 <div class="tools-grid">
                     <div class="tool-icon" data-tooltip="Figma">
-                        <i class="gg-figma"></i>
+                        <i class="hgi-stroke hgi-figma"></i>
                     </div>
                     <div class="tool-icon" data-tooltip="Framer">
-                        <i class="gg-framer"></i>
+                        <i class="hgi-stroke hgi-framer"></i>
                     </div>
                     <div class="tool-icon" data-tooltip="Sketch">
-                        <i class="gg-sketch"></i>
+                        <i class="hgi-stroke hgi-sketch"></i>
                     </div>
                     <div class="tool-icon" data-tooltip="HTML5">
-                        <i class="gg-browser"></i>
+                        <i class="hgi-stroke hgi-html-5"></i>
                     </div>
                     <div class="tool-icon" data-tooltip="CSS3">
-                        <i class="gg-code"></i>
+                        <i class="hgi-stroke hgi-css-3"></i>
                     </div>
                     <div class="tool-icon" data-tooltip="Google Analytics">
-                        <i class="gg-google"></i>
+                        <i class="hgi-stroke hgi-google"></i>
                     </div>
                 </div>
             </section>

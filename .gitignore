@@ -1,0 +1,6 @@
+.DS_Store
+hugeicons_debug.css
+node_modules/
+.vscode/
+.idea/
+*.log
